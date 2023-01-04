@@ -3,7 +3,7 @@ name: Deploy static content to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - dev                     # TODO: Change back to main!
   workflow_dispatch:            # Allows manual triggering
 
 permissions:
@@ -24,6 +24,10 @@ jobs:
         uses: actions/checkout@v3
       - name: "Install Sphinx"
         run: sudo apt install python3-sphinx
+      - name: "Install Furo theme"
+        run: pip3 install furo
+      - name: "Configure Furo theme"
+        run: "echo 'html_theme = \"furo\"' >> source/conf.py"
       - name: "Build with Sphinx"
         run: make html
       - name: "Upload build"
