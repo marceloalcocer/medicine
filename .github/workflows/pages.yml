@@ -3,7 +3,7 @@ name: Deploy static content to GitHub Pages
 on:
   push:
     branches:
-      - dev                     # TODO: Change back to main!
+      - main
   workflow_dispatch:            # Allows manual triggering
 
 permissions:
@@ -27,7 +27,10 @@ jobs:
       - name: "Install Furo theme"
         run: pip3 install furo
       - name: "Configure Furo theme"
-        run: "echo 'html_theme = \"furo\"' >> source/conf.py"
+        run: >-
+          echo 'html_theme = "furo"' >> source/conf.py
+          && echo 'html_logo = "https://upload.wikimedia.org/wikipedia/commons/3/3b/Needle_syringe.png"' >> source/conf.py
+          && echo 'html_title = "Medicine (abridged)"' >> source/conf.py
       - name: "Build with Sphinx"
         run: make html
       - name: "Upload build"
