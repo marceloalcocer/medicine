@@ -14,8 +14,9 @@ The whole of medicine, abridged beyond the point of usefulness.
 	:caption: Contents:
 	:hidden:
 
-	orthopedics
 	heamatology
-	ophthalmology
+	hand_surgery
 	neurology
+	orthopedics
+	ophthalmology
 
