@@ -19,7 +19,7 @@ Once installed, you should then be able to start a new project by following the 
 
 Alternatively, you can `download <https://github.com/marceloalcocer/medicine/archive/refs/heads/main.zip>`_ this very example project you're reading right now!
 
-Either way, once you have a project, you can build it into a web-page;
+Either way, once you have a project, you can build it into a web-page::
 
 	~$ make html
 	~$ # …or perhaps…
